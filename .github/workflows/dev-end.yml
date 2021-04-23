@@ -18,7 +18,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
+          context : bookinfo-ratings
           push: true
           tags: use/app:lastest
-          secrets: |
-            GIT_AUTH_TOKEN=${{ secrets.GITHUB_TOKEN }}
