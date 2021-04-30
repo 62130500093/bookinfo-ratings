@@ -51,7 +51,6 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: curl
-        uses: wei/curl@v1
-        with:
-          args: http://bookinfo.dev.opsta.net/student93/ratings/health
-        run : | grep "Ratings is working"
+        uses: actions/checkout@v2
+        run: |
+          curl http://bookinfo.dev.opsta.net/student93/ratings/health | grep "Ratings is working"
